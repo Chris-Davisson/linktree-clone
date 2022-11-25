@@ -12,3 +12,15 @@ async function copyText(e) {
 shareButtons.forEach((shareButton) =>
   shareButton.addEventListener("click", copyText)
 );
+
+async function foo() {
+  const link = "https://christopher-davisson.com";
+  try {
+    await navigator.clipboard.writeText(link);
+  } catch (error) {
+    Console.log(error);
+  }
+}
+
+const titleShareButton = document.querySelector(".share-button");
+titleShareButton.addEventListener("click", foo);
